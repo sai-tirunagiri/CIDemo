@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="RestAPI" context="/status">
+    <resource methods="GET">
+        <inSequence>
+            <property name="message" value="API is Up " scope="default" type="STRING"/>
+            <property name="status" value="hello word" scope="default" type="STRING"/>
+            <payloadFactory media-type="json">
+                <format>                {     "message":"$1", "status":"$2"    } </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('message')"/>
+                    <arg evaluator="xml" expression="get-property('status')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
