@@ -3,7 +3,7 @@
     <resource methods="GET">
         <inSequence>
             <property name="message" value="API is Up " scope="default" type="STRING"/>
-            <property name="status" value="hello word" scope="default" type="STRING"/>
+            <property name="status" value="Version-1" scope="default" type="STRING"/>
             <payloadFactory media-type="json">
                 <format>                {     "message":"$1", "status":"$2"    } </format>
                 <args>
