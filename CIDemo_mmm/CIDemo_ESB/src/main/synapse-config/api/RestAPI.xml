@@ -2,7 +2,7 @@
 <api xmlns="http://ws.apache.org/ns/synapse" name="RestAPI" context="/status">
     <resource methods="GET">
         <inSequence>
-            <property name="message" value="API is Up " scope="default" type="STRING"/>
+            <property name="message" value="API is Up1 " scope="default" type="STRING"/>
             <property name="status" value="Version-3" scope="default" type="STRING"/>
             <payloadFactory media-type="json">
                 <format>                {     "message":"$1", "status":"$2"    } </format>
